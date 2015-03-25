@@ -17,6 +17,8 @@ int main() {
     //create DynamicArray instance with array size specified
     DynamicArray d2 (10);
 
+   // DynamicArray d8(f)
+
     cout << "Testing no arg/ default value constructor ( DynamicArray d1; DynamicArray d2 (10); ):" << endl;
 
     //print capacity and size for created instances
