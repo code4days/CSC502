@@ -19,16 +19,7 @@ int main() {
 
     srand (time(NULL));
 
-    /**
-    * populate array and vector with random numbers
-    */
 
-    for (int i = 0; i < SIZE; ++i) {
-
-        intArray[i] = rand() % RAND_MAX;
-        intVector.push_back(rand() % RAND_MAX);
-
-    }
 
     cout << endl;
     cout << "Current SIZE of array and vector: " << SIZE << endl;
@@ -37,6 +28,18 @@ int main() {
     int tests = 1; //var for counting the number of tests performed
 
     while (tests <= 3) {
+
+        /**
+        * populate array and vector with random numbers
+        */
+
+        intVector.clear();
+        for (int i = 0; i < SIZE; ++i) {
+
+            intArray[i] = rand() % RAND_MAX;
+            intVector.push_back(rand() % RAND_MAX);
+
+        }
 
         cout << "Test #: " << tests << endl;
         cout << endl;
@@ -52,7 +55,7 @@ int main() {
 
         endTime = clock();
 
-        cout << "Sorting time for integer array: " << (endTime - startTime) << " milliseconds" << endl;
+        cout << "Sorting time for integer array: " << (endTime - startTime) * 1000 << " milliseconds" << endl;
 
         cout << endl;
 
@@ -67,7 +70,7 @@ int main() {
 
         endTime = clock();
 
-        cout << "Sorting time for integer vector: " << (endTime - startTime) << " milliseconds" << endl;
+        cout << "Sorting time for integer vector: " << (endTime - startTime) * 1000 << " milliseconds" << endl;
 
         cout << endl;
 
@@ -78,11 +81,11 @@ int main() {
 
         startTime = clock();
 
-        builtinArraySort(intArray);
+        builtinArraySort(intArray);//no need for the extra function, can call built-in sort directly from here
 
         endTime = clock();
 
-        cout << "Storting time for integer array sort using builtin sort: " << (endTime - startTime) << " milliseconds" << endl;
+        cout << "Storting time for integer array sort using builtin sort: " << (endTime - startTime) * 1000 << " milliseconds" << endl;
 
         cout << endl;
 
@@ -93,11 +96,11 @@ int main() {
 
         startTime = clock();
 
-        builtinVectorSort(intVector);
+        builtinVectorSort(intVector); //no need for the extra function, can call built-in sort directly from here
 
         endTime = clock();
 
-        cout << "Sorting time for integer vector using built-in sort: " << (endTime - startTime) << " milliseconds" << endl;
+        cout << "Sorting time for integer vector using built-in sort: " << (endTime - startTime) * 1000 << " milliseconds" << endl;
 
         cout << endl;
         cout << "=====================" << endl;
